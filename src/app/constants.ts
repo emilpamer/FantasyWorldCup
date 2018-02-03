@@ -1,3 +1,3 @@
 export class Constants {
-static baseUrl = 'http://kalkulator.duodomain.no/api/';
+static baseUrl = 'https://kalkulator.duodomain.no/api/';
 }
