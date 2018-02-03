@@ -1,0 +1,40 @@
+<div fxLayout="column" fxLayoutAlign="center stretch" fxFlex="100%">
+  <div class="full-width shadow" style="background-color:crimson; height:80px">
+    <h1 fxLayoutAlign="center center" style="color: white">Gruppespillet | {{user.name}}</h1>
+  </div>
+
+  <div class="bottom-padding-medium" *ngIf="allowed"></div>
+
+  <div fxLayoutAlign="center center" *ngIf="!allowed" class="bottom-padding-medium">
+    <p>Betting på gruppespillet er stengt!</p>
+  </div>
+
+  <mat-grid-list cols="6" rowHeight="65px" style="margin-bottom:80px" *ngIf="ready">
+    <div *ngFor="let bet of betList">
+      <mat-grid-tile>
+        <img class="image shadow homeTeam" src="assets/{{bet.homeTeam}}.png" />
+      </mat-grid-tile>
+      <mat-grid-tile class="team">{{bet.homeTeam}}</mat-grid-tile>
+      <mat-grid-tile>
+        <mat-input-container class="homeScore">
+          <input [disabled]="!allowed" matInput style="text-align:center" [(ngModel)]="bet.homeScore"/>
+        </mat-input-container>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <mat-input-container class="awayScore">
+          <input [disabled]="!allowed" matInput style="text-align:center" [(ngModel)]="bet.awayScore"/>
+        </mat-input-container>
+      </mat-grid-tile>
+      <mat-grid-tile class="team">{{bet.awayTeam}}</mat-grid-tile>
+      <mat-grid-tile>
+        <img class="image shadow awayTeam" src="assets/{{bet.awayTeam}}.png" />
+      </mat-grid-tile>
+    </div>
+  </mat-grid-list>
+    </div>
+
+    <div class="footer-row" class.lt-mat="hidden">
+    <button mat-raised-button class="button-primary button-large-height" fxFlex (click)="submit()">
+      <mat-icon>save</mat-icon>
+      </button>
+</div>

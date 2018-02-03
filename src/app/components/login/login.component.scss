@@ -1,0 +1,39 @@
+
+.outer-column {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+@media(max-width:600px) {
+    .outer-column {
+        margin-left: 25px;
+        margin-right: 25px;
+    }
+}
+
+.full-width {
+    width: 100%;
+}
+
+.image {
+    max-height: 300px;
+    padding: 25px;
+}
+
+.login-button {
+    background-color: blue;
+    height: 50px;
+}
+
+.input-field:focus label {
+    color:blue;
+}
+
+.login-container {
+    width: 100%;
+    max-width: 500px !important;
+}

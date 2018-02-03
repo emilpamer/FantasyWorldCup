@@ -1,0 +1,119 @@
+@import '../../../styles.scss';
+.settings-button{
+    width:50px;
+    height:50px;
+    border-radius: 50px; 
+}
+
+.white-text{
+    color:$white; 
+}
+
+.toolbar{
+    position:fixed;
+    top:0;
+}
+
+.outer-column {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.inner-column {
+    width: $width-small;
+    max-width: 100%;
+    margin-left: $margin-medium;
+    margin-right: $margin-medium;
+    flex: 0 1 auto;
+}
+
+@media(max-width:600px) {
+    .outer-column {
+        margin-left: 25px;
+        margin-right: 25px;
+    }
+}
+
+mat-input-container {
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    align-self: center;
+    font-size: 1.5em;
+}
+
+.full-width {
+    width: 100%;
+}
+
+
+.right-pane {
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
+.right-pane-large{
+        overflow-y:scroll;
+}
+
+.left-pane {
+    z-index: 9000;
+    box-shadow: 4px 0px 5px 0px rgba(0, 0, 0, 0.5);
+    color: $white;
+    background-color: mat-color($primary);
+}
+
+.router-container {
+    padding-bottom:25px;
+    margin-left: 50px;
+    margin-right: 50px;
+
+}
+
+.router-container-small {
+    padding-top: 40px;
+    padding-bottom: 25px;
+}
+
+.logo {
+    max-width: 60%;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.logo-restrict-size{
+    display: flex;
+    flex:1 0 auto;
+    max-height:200px;
+}
+
+.header-large{
+    font-size:32px; 
+}
+
+.header-small{
+    font-size:24px;
+}
+.fixed-settings-icon{
+    position:fixed;
+    top: 50px;
+    right: 50px;
+}
+
+.nav{
+    width:100%; 
+    height:1/3;
+}
+
+mat-icon{
+    text-align: center;
+    font-size:30px;
+}
+
+h3{
+    padding:0;
+    margin:0;
+}

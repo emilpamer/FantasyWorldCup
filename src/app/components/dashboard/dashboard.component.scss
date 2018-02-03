@@ -1,0 +1,38 @@
+@import '../../../styles.scss';
+.top{
+    margin:0;
+    font-size:75px;
+    color: mat-color($primary);
+    text-align: center;
+    height:200px;
+    width:275px;
+}
+
+.bottom{
+    margin:0;
+    text-align: center;
+    font-size:15px;
+    background-color: mat-color($primary);
+    color:$white;
+    height:50px;
+    width:275px;
+}
+
+md-grid-list{
+    margin-left:20px;
+    margin-right:20px;
+    margin-top:20px;
+}
+
+.top2{
+    margin:0;
+    font-size:50px;
+    color: mat-color($primary);
+    text-align: center;
+    height:230px;
+    width:275px;
+}
+
+.shadow{
+    box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.5);
+}

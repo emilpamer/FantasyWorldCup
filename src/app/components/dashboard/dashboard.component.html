@@ -1,0 +1,108 @@
+<div fxLayout="column" fxLayoutAlign="center stretch" fxFlex="100%">
+  <div class="header shadow" style="background-color:crimson; height:80px">
+    <h1 fxLayoutAlign="center center" style="color: white">Dashboard</h1>
+  </div>
+
+
+<mat-grid-list cols="4">
+      <mat-grid-tile>
+        <div fxLayout="column" fxLayoutAlign="center stretch">
+        <mat-card fxLayout="row" fxLayoutAlign="center center" fxFlex="100%" class="top">
+        {{users.length}}
+        </mat-card>
+        <mat-card fxLayout="row" fxLayoutAlign="center center" fxFlex="100%" class="bottom">
+        Spillere
+        </mat-card>
+        </div>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <div fxLayout="column" fxLayoutAlign="center stretch">
+        <mat-card fxLayout="row" fxLayoutAlign="center center" fxFlex="100%" class="top">
+        64
+        </mat-card>
+        <mat-card fxLayout="row" fxLayoutAlign="center center" fxFlex="100%" class="bottom">
+        Kamper
+        </mat-card>
+        </div>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <div fxLayout="column" fxLayoutAlign="center stretch">
+        <mat-card fxLayout="row" fxLayoutAlign="center center" fxFlex="100%" class="top">
+        248
+        </mat-card>
+        <mat-card fxLayout="row" fxLayoutAlign="center center" fxFlex="100%" class="bottom">
+        Poeng mulig
+        </mat-card>
+        </div>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <div fxLayout="column" fxLayoutAlign="center stretch">
+        <mat-card fxLayout="row" fxLayoutAlign="center center" fxFlex="100%" class="top">
+        {{average}}
+        </mat-card>
+        <mat-card fxLayout="row" fxLayoutAlign="center center" fxFlex="100%" class="bottom">
+        Gj.snitt poeng
+        </mat-card>
+        </div>
+      </mat-grid-tile>
+
+
+
+      <mat-grid-tile>
+        <mat-card style="margin:10px;" class="top2">
+          <mat-card-title>FIFA Ranking</mat-card-title>
+          <mat-card-content>
+            <p>Tyskland</p>
+            <p>Brasil</p>
+            <p>Portugal</p>
+            <p>Argentina</p>
+            <p>Belgia</p>
+            <p>Spania</p>
+          </mat-card-content>
+        </mat-card>
+      </mat-grid-tile>
+
+      <mat-grid-tile>
+        <mat-card style="margin:10px;" class="top2">
+          <mat-card-title>Ikke Kvalifiserte</mat-card-title>
+          <mat-card-content>
+            <p>Nederland</p>
+            <p>Italia</p>
+            <p>Kamerun</p>
+            <p>Chile</p>
+            <p>USA</p>
+            <p>Elfenbenskysten</p>
+          </mat-card-content>
+        </mat-card>
+      </mat-grid-tile>
+
+      <mat-grid-tile>
+        <mat-card style="margin:10px;" class="top2">
+          <mat-card-title>Store Profiler</mat-card-title>
+          <mat-card-content>
+            <p>L. Messi</p>
+            <p>C. Ronaldo</p>
+            <p>Neymar jr</p>
+            <p>K. Mbappe</p>
+            <p>P. Coutinho</p>
+            <p>R. Lukaku</p>
+          </mat-card-content>
+        </mat-card>
+      </mat-grid-tile>
+
+            <mat-grid-tile>
+        <mat-card style="margin:10px;" class="top2">
+          <mat-card-title>Manglende Profiler</mat-card-title>
+          <mat-card-content>
+            <p>A. Sanchèz</p>
+            <p>G. Bale</p>
+            <p>L. Buffon</p>
+            <p>G. Chiellini</p>
+            <p>V. Van Dijk</p>
+            <p>W. Snijder</p>
+          </mat-card-content>
+        </mat-card>
+      </mat-grid-tile>
+
+    </mat-grid-list>
+</div>

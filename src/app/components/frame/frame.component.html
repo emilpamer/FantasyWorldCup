@@ -1,0 +1,42 @@
+<div fxLayout="row" class="full-height" fxLayout.lt-mat="column" fxLayoutAlign="start stretch">
+
+    <div fxLayout="column" fxHide.lt-mat class="left-pane" fxFlexOrder="0" fxFlexOrder.lt-mat="1" fxFlex="20%" fxFlex.lt-mat="100%"
+        fxLayoutAlign="center center">
+        <button mat-button (click)="navigate(1)" fxFlex class="nav" fxLayout="column" fxLayoutAlign="center center">
+            <mat-icon>dashboard</mat-icon>
+            <h3>Dashboard</h3>
+        </button>
+        <button mat-button (click)="navigate(2)" fxFlex class="nav" fxLayout="column" fxLayoutAlign="center center">
+            <mat-icon>event</mat-icon>
+            <h3>Kampoppsett</h3>
+        </button>
+        <button mat-button (click)="navigate(3)" fxFlex class="nav" fxLayout="column" fxLayoutAlign="center center">
+            <mat-icon>star_border</mat-icon>
+            <h3>Spesialspill</h3>
+        </button>
+        <button mat-button (click)="navigate(4)" fxFlex class="nav" fxLayout="column" fxLayoutAlign="center center">
+            <mat-icon>format_list_numbered</mat-icon>
+            <h3>Tabell</h3>
+        </button>
+    </div>
+    <div fxLayout="row" class="navbar-small" fxHide.gt-sm fxLayoutAlign="center start">
+        <button (click)="navigate(1)" class="lt-mat-nav" fxFlex mat-button>
+                    <mat-icon height="75">save</mat-icon>
+        </button>
+        <button (click)="navigate(2)" class="lt-mat-nav" fxFlex mat-button>
+                    <mat-icon height="75">save</mat-icon>
+        </button>
+        <button (click)="navigate(3)" class="lt-mat-nav" fxFlex mat-button>
+                    <mat-icon height="75">save</mat-icon>
+        </button>
+    </div>
+
+
+    <div fxLayout="column" class="right-pane" class.gt-sm="right-pane-large" fxFlexOrder="1" fxFlexOrder.lt-mat="0" fxLayoutAlign="start stretch"
+        fxFlex="80%" fxFlex.lt-mat="100%">
+
+        <div>
+            <router-outlet></router-outlet>
+
+        </div>
+    </div>

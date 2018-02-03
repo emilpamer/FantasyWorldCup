@@ -1,0 +1,128 @@
+<div fxLayout="column" fxLayoutAlign="center stretch" fxFlex="100%">
+  <div class="full-width  shadow" style="background-color:crimson; height:80px">
+    <h1 fxLayoutAlign="center center" style="color: white">Spesialspill | {{user.name}}</h1>
+  </div>
+
+  <mat-grid-list cols="4" style="margin-top:2%">
+    <mat-grid-tile *ngFor="let group of groups">
+      <mat-card>
+        <mat-card-header>
+          <img mat-card-avatar src="assets/football.jpg">
+          <mat-card-title>Gruppe {{group.name}}</mat-card-title>
+        </mat-card-header>
+        <p>{{group.teams[0]}}</p>
+        <p>{{group.teams[1]}}</p>
+        <p>{{group.teams[2]}}</p>
+        <p>{{group.teams[3]}}</p>
+      </mat-card>
+    </mat-grid-tile>
+  </mat-grid-list>
+
+  <div fxLayout="column" fxLayoutAlign="start stretch" fxLayoutGap="50px" *ngIf="betLoaded" class="specials">
+    <div fxLayout="row" fxFlex="100%" fxLayoutGap="10%">
+      <div fxLayout="column" fxFlex="25%">
+        <mat-form-field>
+          <mat-select placeholder="Toppscorer gruppespill" [(ngModel)]="topScorerGroupStage">
+            <mat-option *ngFor="let player of topScorers" [value]="player">
+              {{ player }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div fxLayout="column" fxFlex="25%">
+        <mat-form-field>
+          <mat-select placeholder="Toppscorer i VM" [(ngModel)]="topScorerWorldCup">
+            <mat-option *ngFor="let player of topScorers" [value]="player">
+              {{ player }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div fxLayout="column" fxFlex="25%">
+        <mat-form-field>
+          <mat-select placeholder="Gruppe med færrest mål" [(ngModel)]="lowestScoringGroup">
+            <mat-option *ngFor="let group of groups" [value]="group.name">
+              {{ group.name }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+
+      <div fxLayout="column" fxFlex="25%">
+        <mat-form-field>
+          <mat-select placeholder="Gruppe med flest mål" [(ngModel)]="topScoringGroup">
+            <mat-option *ngFor="let group of groups" [value]="group.name">
+              {{ group.name }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+    </div>
+
+    <div fxLayout="row" fxFlex="100%" fxLayoutGap="10%">
+      <div fxLayout="column" fxFlex="25%">
+        <mat-form-field>
+          <mat-select multiple placeholder="Lag som når playoff" [(ngModel)]="surpriseTeams">
+            <mat-option *ngFor="let team of surpriseAdvancingTeams" [value]="team">
+              {{ team }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div fxLayout="column" fxFlex="25%">
+        <mat-form-field>
+          <mat-select multiple placeholder="Lag som flopper" [(ngModel)]="floppingTeams">
+            <mat-option *ngFor="let team of favoritesToAdvanceTeams" [value]="team">
+              {{ team }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div fxLayout="column" fxFlex="25%">
+        <mat-form-field>
+          <mat-select placeholder="Mest målrike kamp" [(ngModel)]="matchWithMostGoals">
+            <mat-option *ngFor="let match of matchList" [value]="match.id">
+              {{ match.homeTeam }} - {{match.awayTeam}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div fxLayout="column" fxFlex="25%">
+        <mat-form-field>
+          <mat-select placeholder="Flest mål gruppespill" [(ngModel)]="topScoringTeamGroupStage">
+            <mat-option *ngFor="let team of teamList" [value]="team">
+              {{ team }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+    </div>
+
+    <div fxLayout="row" fxFlex="100%" fxLayoutGap="10%">
+      <div fxLayout="column" fxFlex="25%">
+        <mat-form-field>
+          <mat-select placeholder="Færrest mål gruppespill" [(ngModel)]="lowestScoringTeamGroupStage">
+            <mat-option *ngFor="let team of teamList" [value]="team">
+              {{ team }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div fxLayout="column" fxFlex="25%">
+        <mat-form-field>
+          <mat-select multiple placeholder="Spiss som scorer 0 mål" [(ngModel)]="scoresZero">
+            <mat-option *ngFor="let player of topScorers" [value]="player">
+              {{ player }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div fxLayout="column" fxFlex="25%"></div>
+      <div fxLayout="column" fxFlex="25%"></div>
+    </div>
+  </div>
+  <div class="bottom-padding-medium"></div>
+</div>
+<div class="footer-row">
+  <button mat-raised-button (click)="submit()" class="button-primary button-large-height" fxFlex><mat-icon style="color:white">save</mat-icon></button>
+</div>

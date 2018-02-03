@@ -1,0 +1,72 @@
+<div fxLayout="column" fxLayoutAlign="center stretch" fxFlex="100%">
+  <div class="full-width shadow" style="background-color:crimson; height:80px">
+    <h1 fxLayoutAlign="center center" style="color: white">Ligatabell</h1>
+  </div>
+
+  <div class="bottom-padding-medium"></div>
+
+  <div fxLayout="column" fxLayoutAlign="center stretch" fxFlex="50%">
+    <mat-card class="table-card">
+      <mat-table [dataSource]="userDataSource">
+        <ng-container cdkColumnDef="navn">
+          <mat-header-cell *cdkHeaderCellDef fxFlex="80%">Navn</mat-header-cell>
+          <mat-cell *cdkCellDef="let user" fxFlex="80%"> {{user.name}}</mat-cell>
+        </ng-container>
+
+        <ng-container cdkColumnDef="poeng">
+          <mat-header-cell *cdkHeaderCellDef fxFlex="20%">Poeng</mat-header-cell>
+          <mat-cell *cdkCellDef="let user" fxFlex="20%"> {{user.points}}</mat-cell>
+        </ng-container>
+
+        <mat-header-row *cdkHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *cdkRowDef="let row; columns: displayedColumns;" class="table-row"></mat-row>
+      </mat-table>
+    </mat-card>
+  </div>
+
+  <mat-grid-list cols="3" [rowHeight]="400">
+    <mat-grid-tile>
+      <div fxLayout="column" fxLayoutAlign="center stretch">
+        <mat-card fxLayout="row" fxLayoutAlign="center center" fxFlex="100%" class="bottom">
+          Flest HUB
+        </mat-card>
+        <mat-card fxLayout="row" fxLayoutAlign="center center" fxFlex="100%" class="top">
+          <mat-list>
+            <mat-list-item *ngFor="let user of topHUB">
+              {{user.name}} - {{user.hub}}
+            </mat-list-item>
+          </mat-list>
+        </mat-card>
+      </div>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <div fxLayout="column" fxLayoutAlign="center stretch">
+        <mat-card fxLayout="row" fxLayoutAlign="center center" fxFlex="100%" class="bottom">
+          Flest 3-poengere
+        </mat-card>
+        <mat-card fxLayout="row" fxLayoutAlign="center center" fxFlex="100%" class="top">
+          <mat-list>
+            <mat-list-item *ngFor="let user of topThreePointers">
+              {{user.name}} - {{user.threePointers}}
+            </mat-list-item>
+          </mat-list>
+        </mat-card>
+      </div>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <div fxLayout="column" fxLayoutAlign="start stretch">
+        <mat-card fxLayout="row" fxLayoutAlign="center center" fxFlex="100%" class="bottom">
+          Flest spesialpoeng
+        </mat-card>
+        <mat-card fxLayout="row" fxLayoutAlign="center center" fxFlex="100%" class="top">
+          <mat-list>
+            <mat-list-item *ngFor="let user of topSpecials">
+              {{user.name}} - {{user.specialsPoints}}
+            </mat-list-item>
+          </mat-list>
+        </mat-card>
+      </div>
+    </mat-grid-tile>
+  </mat-grid-list>
+
+</div>

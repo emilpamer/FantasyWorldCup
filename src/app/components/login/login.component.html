@@ -1,0 +1,31 @@
+<div fxLayout="column" fxLayoutAlign="center stretch" fxFlex="100%" style="padding-bottom:50px">
+    <div class="full-width" style="background-color:crimson; height:80px">
+        <h1 fxLayoutAlign="center center" style="color: white">Emil og Cathrine World Cup Challenge</h1>
+    </div>
+    <div fxLayout="column" fxLayoutAlign="center center">
+        <br>
+        <img class="image" src="https://seattle-mp7static.mlsdigital.net/images/russia-2018.png?4HC1jS0jsFPfEN8uSTP.9Sq8zjgKVj5z">
+        <br>
+        <div class="login-container" fxLayout="column">
+
+            <mat-input-container class="full-width input-field">
+                <input [(ngModel)]="pin" autofocus matInput placeholder="Pinkode (tall)" (keydown.enter)="login()" />
+            </mat-input-container>
+            <br>
+            <button mat-raised-button class="login-button full-width" (click)="login()" style="color:white">
+              Logg inn
+            </button>
+            <p fxLayoutAlign="center center" *ngIf="statusString !== null" style="color:green">{{statusString}}</p>
+            <br>
+            <br>
+            <p fxLayoutAlign="center center" style="margin:0%">Ikke med enda? velg et pin øverst, navn her og bli med!</p>
+            <mat-input-container class="full-width input-field">
+                <input [(ngModel)]="name" matInput placeholder="Navn" (keydown.enter)="create()" />
+            </mat-input-container>
+            <br>
+            <button mat-raised-button class="login-button full-width" (click)="create()" style="color:white">
+              Bli med
+            </button>
+        </div>
+    </div>
+</div>

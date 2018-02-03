@@ -1,0 +1,38 @@
+@import '../../../styles.scss';
+
+.full-width {
+    width: 100%;
+}
+
+.image {
+    max-height: 50px;
+}
+
+.footer-row{
+    padding-left:20px;
+    padding-right:20px;
+}
+
+.bottom-padding-medium{
+    padding-bottom:100px;
+}
+
+.specials{
+    margin-left:2%;
+    margin-right:2%;
+    margin-top:7%;
+}
+
+mat-card{
+    height:200px;
+    width:180px;
+    text-align: center;
+}
+
+mat-card-header{
+    color: mat-color($primary);
+}
+
+.shadow{
+    box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.5);
+}
